@@ -1,6 +1,10 @@
 # Tools
 
-No standalone tools have been implemented yet. This directory is reserved for future digital-forensics programs.
+| Tool | Status | Purpose |
+| --- | --- | --- |
+| [Imager](imager/README.md) | 0.1.0 | JPEG/PNG inspection, metadata export, reversible removal, and embedded/appended signature scanning. |
+
+Imager runs locally on Python 3.11+ with no third-party runtime dependencies. Its command reference is in [commands/imager](../commands/imager/README.md).
 
 Use one directory per tool: `tools/<tool-name>/`. Use lowercase names separated by hyphens, such as `file-integrity` or `event-timeline`.
 

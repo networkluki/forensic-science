@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "networkluki-imager"
+version = "0.1.0"
+description = "Local JPEG/PNG metadata analysis, reversible removal, and payload signature inspection"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "LicenseRef-NetworkLuki-Personal-Use"
+license-files = ["LICENSE"]
+authors = [{name = "NetworkLuki"}]
+dependencies = []
+
+[project.scripts]
+imager = "networkluki_imager.cli:main"
+
+[project.urls]
+Repository = "https://github.com/networkluki/forensic-science"
+
+[tool.setuptools.packages.find]
+where = ["src"]
