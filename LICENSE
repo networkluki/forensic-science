@@ -1,0 +1,57 @@
+NetworkLuki Forensic Science Personal Use License
+
+Copyright (c) 2026 NetworkLuki
+
+All rights reserved, except for the permissions expressly granted below.
+
+Scope
+
+This license applies to the original software, scripts, command references,
+documentation, and other original material in this repository, unless a file
+states otherwise. Third-party components remain subject to their own licenses.
+
+You are allowed to:
+
+- Download, inspect, build, and use NetworkLuki Forensic Science for your own
+  personal, non-commercial use.
+- Make local modifications solely for that personal, non-commercial use.
+- Keep local copies of the source code and released archives for that use.
+- Share links to the official repository and official downloads.
+
+You are not allowed to, without prior written permission from NetworkLuki:
+
+- Sell, sublicense, or otherwise commercially exploit the software or materials,
+  including using them to provide paid services.
+- Redistribute or republish original or modified copies, except as expressly
+  permitted below.
+- Present the project or its materials as your own work.
+- Reverse engineer the software for the purpose of unauthorized copying,
+  cloning, or republication, except where applicable law permits it.
+
+You must not use this project for unauthorized access, surveillance, monitoring,
+or collection of another person's information.
+
+Authorized use
+
+This project is intended for local use on computers, devices, and data that you
+own or have explicit authorization to examine. Authorization to access a system
+does not itself grant permission for commercial use under this license.
+
+Public repository and legal exceptions
+
+Nothing in this license restricts rights granted by GitHub's Terms of Service
+to view or fork this public repository through GitHub's functionality.
+Those rights do not grant additional permission to commercially exploit the
+project or distribute it elsewhere.
+
+Nothing in this license limits rights that cannot lawfully be excluded or
+restricted under applicable law.
+
+Disclaimer
+
+To the extent permitted by applicable law, this project is provided "as is",
+without warranty of any kind. The author is not liable for damage, data loss,
+misuse, or legal consequences arising from its use.
+
+For permissions beyond this license, contact NetworkLuki through the official
+repository: https://github.com/networkluki/forensic-science
