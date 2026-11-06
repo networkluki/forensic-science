@@ -110,7 +110,7 @@ def hash_file(path, expected):
     with os.fdopen(fd, 'rb') as stream:
         before = os.fstat(stream.fileno())
         if not stat.S_ISREG(before.st_mode) or fingerprint(before) != expected:
-            raise IntegrityError(f'File replaced before reading: {path}')
+            raise IntegrityError(f'File replaced before reading: {path}; expected={expected!r}; observed={fingerprint(before)!r}')
         digest = hashlib.sha256()
         remaining = before.st_size
         while remaining:
