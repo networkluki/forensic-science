@@ -2,6 +2,7 @@
 
 | Tool | Status | Purpose |
 | --- | --- | --- |
+| [File Integrity](file-integrity/README.md) | 0.1.0 | Deterministic SHA-256 manifests and changed/missing/added file verification. |
 | [Imager](imager/README.md) | 0.1.0 | JPEG/PNG inspection, metadata export, reversible removal, and embedded/appended signature scanning. |
 
 Imager runs locally on Python 3.11+ with no third-party runtime dependencies. Its command reference is in [commands/imager](../commands/imager/README.md).
