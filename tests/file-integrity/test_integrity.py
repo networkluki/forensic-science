@@ -109,6 +109,16 @@ class IntegrityTests(unittest.TestCase):
                 m.collect(self.root, 'directory')
         self.assertFalse(self.manifest.exists())
 
+    def test_windows_cross_api_ctime(self):
+        expected = (1, 2, 0o100644, 3, 100, 90)
+        observed = (1, 2, 0o100644, 3, 100, 100)
+        self.assertTrue(m.identity_matches(observed, expected, 'nt'))
+        self.assertFalse(m.identity_matches(observed, expected, 'posix'))
+        for index in range(5):
+            changed = list(observed)
+            changed[index] += 1
+            self.assertFalse(m.identity_matches(tuple(changed), expected, 'nt'))
+
     def test_change_during_hash(self):
         original = m.os.fstat
         calls = 0

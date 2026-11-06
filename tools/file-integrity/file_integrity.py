@@ -34,6 +34,11 @@ def fingerprint(info):
             info.st_mtime_ns, info.st_ctime_ns)
 
 
+def identity_matches(observed, expected, platform):
+    # ctime remains checked within each API before/after reading.
+    return observed[:-1] == expected[:-1] if platform == 'nt' else observed == expected
+
+
 def safe_path(name):
     if not isinstance(name, str) or not name or len(name) > 4096:
         raise IntegrityError('Invalid manifest path')
@@ -109,7 +114,11 @@ def hash_file(path, expected):
     fd = open_readonly(path, flags)
     with os.fdopen(fd, 'rb') as stream:
         before = os.fstat(stream.fileno())
-        if not stat.S_ISREG(before.st_mode) or fingerprint(before) != expected:
+        # Windows stat and fstat can expose different ctime semantics (CPython #157671).
+        # Compare ctime within each API, not across path and descriptor APIs.
+        observed = fingerprint(before)
+        matches = identity_matches(observed, expected, os.name)
+        if not stat.S_ISREG(before.st_mode) or not matches:
             raise IntegrityError(f'File replaced before reading: {path}; expected={expected!r}; observed={fingerprint(before)!r}')
         digest = hashlib.sha256()
         remaining = before.st_size
@@ -119,7 +128,7 @@ def hash_file(path, expected):
                 raise IntegrityError(f'File truncated during reading: {path}')
             digest.update(data)
             remaining -= len(data)
-        if stream.read(1) or fingerprint(os.fstat(stream.fileno())) != expected:
+        if stream.read(1) or fingerprint(os.fstat(stream.fileno())) != fingerprint(before):
             raise IntegrityError(f'File changed during reading: {path}')
     source_path(path)
     if fingerprint(checked(path)) != expected:
