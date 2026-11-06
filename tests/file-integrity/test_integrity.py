@@ -53,7 +53,7 @@ class IntegrityTests(unittest.TestCase):
         (self.root / 'gone').unlink()
         (self.root / 'new').write_bytes(b'n')
         result = self.cli('verify', self.manifest, '--root', self.root)
-        self.assertEqual(result.returncode, 1)
+        self.assertEqual(result.returncode, 1, result.stderr)
         self.assertEqual(json.loads(result.stdout), {'changed': ['a.txt'], 'missing': ['gone'], 'added': ['new']})
 
     def test_single_file_and_empty_directory(self):
