@@ -7,7 +7,6 @@ Short, documented commands for authorized personal digital-forensics work. These
 | Debian 13 / Arch Linux | [Linux commands](linux/README.md) | SHA-256, file metadata, copied journals, bounded live journal queries |
 | Windows 11 | [PowerShell commands](windows/README.md) | SHA-256, file metadata, copied EVTX files, bounded live event queries |
 | Linux / Windows, Python 3.11+ | [Imager](imager/README.md) | JPEG/PNG analysis, metadata export/removal/restoration, embedded-file candidates |
-
 | Linux / Windows, Python 3.11+ | [File Integrity](file-integrity/README.md) | Create and verify SHA-256 manifests |
 
 ## Before running commands
