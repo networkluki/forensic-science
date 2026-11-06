@@ -13,3 +13,11 @@ The [CI workflow](../.github/workflows/imager-tests.yml) runs the tests on Windo
 Add tests under `tests/<tool-name>/` when implementing a tool. Use synthetic fixtures and temporary output directories. Cover the tool's documented behavior, error paths, and security boundaries; do not require real evidence or privileged access by default.
 
 Document the exact test command and expected outcome in the tool README. A passing test suite only supports its stated test scope; it does not certify forensic validity.
+
+File Integrity uses synthetic temporary fixtures:
+
+```text
+python -m unittest discover -s tests/file-integrity -v
+```
+
+Its [workflow](../.github/workflows/file-integrity-tests.yml) covers Ubuntu and Windows, Python 3.11 and 3.13. See its [README](../tools/file-integrity/README.md) for scope and limitations.

@@ -2,7 +2,7 @@
 
 Digital forensics workspace by **NetworkLuki** for local, authorized examination of files, logs, and system artifacts on Linux and Windows.
 
-**Available tool:** [Imager](tools/imager/README.md), a local Python command for JPEG/PNG analysis, metadata export, reversible metadata removal, and possible embedded-file detection. The repository also contains platform command references and evidence-handling templates. No standalone executable release is provided yet.
+**Available tools:** [File Integrity](tools/file-integrity/README.md) creates and verifies deterministic SHA-256 manifests for files and directory trees; [Imager](tools/imager/README.md), a local Python command for JPEG/PNG analysis, metadata export, reversible metadata removal, and possible embedded-file detection. The repository also contains platform command references and evidence-handling templates. No standalone executable release is provided yet.
 
 ## Imager
 
@@ -47,7 +47,6 @@ Command documentation belongs in `commands/`; executable implementations belong 
 
 These are further development areas beyond Imager's documented JPEG/PNG support:
 
-- File hashing and integrity manifests.
 - Additional file formats and metadata decoders.
 - Linux journal and Windows event-log analysis.
 - Timestamp normalization and event timelines.
